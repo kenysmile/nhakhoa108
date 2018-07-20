@@ -30,6 +30,6 @@
     ],
     # only loaded in demonstration mode
     'demo': [
-        #'demo/demo.xml',
+        'views/bms_hr_employee_view.xml',
     ],
 }

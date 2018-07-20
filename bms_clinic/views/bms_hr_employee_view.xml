@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+<!-- Inherit Form View to Modify it -->
+        <record id="employee_inherit_form" model="ir.ui.view">
+            <field name="name">hr.employee</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//sheet/div[1]" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//sheet/div[2]/div[1]/div[1]" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='category_ids']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='mobile_phone']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='work_email']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='job_id']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='work_location']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='work_phone']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='parent_id']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='coach_id']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='resource_calendar_id']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='notes']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//notebook[1]/page[2]" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//notebook[1]/page[3]" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+
+
+                <xpath expr="//notebook[1]/page[1]" position="attributes">
+                    <attribute name="string"></attribute>
+                </xpath>
+                <xpath expr="//notebook[1]/page[1]/group[1]/group[1]" position="attributes">
+                    <attribute name="string"></attribute>
+                </xpath>
+                <xpath expr="//notebook[1]/page[1]/group[1]/group[2]" position="attributes">
+                    <attribute name="string"></attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='address_id']" position="attributes">
+                    <attribute name="string">Phòng khám</attribute>
+                </xpath>
+                <xpath expr="//field[@name='address_id']" position="before">
+                    <field name="barcode"/>
+                </xpath>
+                <xpath expr="//field[@name='address_id']" position="before">
+                    <field name="name" string="Tên nhân viên"/>
+                </xpath>
+                <xpath expr="//notebook[1]/page[1]/group[1]/group[1]/field[4]" position="after">
+                    <field name="wage"/>
+                </xpath>
+                <xpath expr="//field[@name='wage']" position="after">
+                    <field name="date_start"/>
+                </xpath>
+                <xpath expr="//notebook[1]/page[1]/group[1]/group[2]/field[1]" position="after">
+                    <field name="mobile_phone" string="Số Điện Thoại"/>
+                </xpath>
+                <xpath expr="//field[@name='address_id']" position="after">
+                    <field name="job_id" string="Chức vụ"/>
+                </xpath>
+                <xpath expr="//notebook[1]/page[1]/group[1]/group[2]/field[2]" position="after">
+                    <field name="work_email" string="Email"/>
+                </xpath>
+                <xpath expr="//notebook[1]/page[1]/group[1]/group[2]/field[3]" position="after">
+                    <field name="birthday" string="Ngày sinh"/>
+                </xpath>
+                <xpath expr="//notebook[1]/page[1]/group[1]/group[2]/field[4]" position="after">
+                    <field name="gender" string="Giới tính"/>
+                </xpath>
+                <xpath expr="//notebook[1]/page[1]/group[1]/group[2]/field[5]" position="after">
+                    <field name="notes" string="Ghi chú"/>
+                </xpath>
+                <xpath expr="//notebook[1]/page[1]/group[1]/group[2]/field[1]" position="after">
+                    <field name="active" string="Hoạt động"/>
+                </xpath>
+
+                <xpath expr="//field[@name='department_id']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="employee_inherit_tree" model="ir.ui.view">
+            <field name="name">hr.employee</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_tree"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='work_phone']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='department_id']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='parent_id']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='work_email']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='name']" position="before">
+                    <field name="barcode" string="ID nhân viên"/>
+                </xpath>
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="gender" string="Giới tính"/>
+                </xpath>
+                <xpath expr="//field[@name='job_id']" position="after">
+                    <field name="mobile_phone" string="SĐT"/>
+                </xpath>
+                <xpath expr="//field[@name='mobile_phone']" position="after">
+                    <field name="address_id" string="Phòng khám"/>
+                </xpath>
+                <xpath expr="//field[@name='address_id']" position="after">
+                    <field name="date_start" string="Ngày bắt đầu làm việc"/>
+                </xpath>
+                <xpath expr="//field[@name='date_start']" position="before">
+                    <field name="work_email" string="Email"/>
+                </xpath>
+
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="string">Tên nhân viên</attribute>
+                </xpath>
+                <xpath expr="//field[@name='job_id']" position="attributes">
+                    <attribute name="string">Chức vụ</attribute>
+                </xpath>
+                <xpath expr="//field[@name='work_email']" position="attributes">
+                    <attribute name="string">Email</attribute>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>
