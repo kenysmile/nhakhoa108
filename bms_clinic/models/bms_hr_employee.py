@@ -8,3 +8,4 @@ class BMSEmployee(models.Model):
     barcode = fields.Char(string='ID nhân viên')
     wage = fields.Float(string='Lương cơ bản')
     a = fields.Date(string='Ngày bắt đầu làm việc')
+    b = fields.Date(string='AAAA')
